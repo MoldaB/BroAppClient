@@ -1,7 +1,7 @@
 {
   "name": "The Bro App!",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
@@ -24,5 +24,4 @@
     "preset": "react-native"
   },
   "author": "Hen Ivgani Molda Baygal , Naor Shlomo King Of the Andels Tedgi"
- 
 }
