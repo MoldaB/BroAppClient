@@ -1,5 +1,5 @@
 {
-  "name": "Bro",
+  "name": "The Bro App!",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -22,5 +22,7 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "author": "Hen Ivgani Molda Baygal , Naor Shlomo King Of the Andels Tedgi"
+ 
 }
