@@ -12,9 +12,15 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View>
-        <LoginComponent/>      
-      </View>
+      //First Main Scene is with one sub scene
+      <Router sceneStyle={ {paddingTop : 64} }>
+        <Scene key='auth'>
+          <Scene
+            key='login'
+            component={LoginComponent}
+            title='Login'/>
+        </Scene>
+      </Router>
     );
   }
 }
