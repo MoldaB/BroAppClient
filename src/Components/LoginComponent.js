@@ -7,6 +7,12 @@ import {
     StyleSheet 
 } from 'react-native';
 
+import { 
+    Card, 
+    CardSection, 
+    Input, 
+    Button 
+} from './common';
 
 class LoginComponent extends Component {
     
@@ -24,46 +30,31 @@ class LoginComponent extends Component {
 
     render() {
         return(
-            <View style={styles.contentView}>
-                <TextInput
-                    style={styles.textInput}
-                    onChangeText={this.usernameChanged.bind(this)}
-                    placeholder={"USERNAME"} />
-                    <TextInput 
-                        style={styles.textInput}
-                        onChangeText={this.passwordChanged.bind(this)} 
-                        placeholder={"PASSWORD"} />
-                <TouchableHighlight 
-                    onPress= {this.loginButtonPressed.bind(this)}
-                    style= {styles.loginButton}>
-                    <Text>Login</Text>
-                </TouchableHighlight>
-            </View>
+            <Card>
+                <CardSection>
+                    <Input
+                        autoCapitalize={'none'}
+                        keyboardType={"email-address"}
+                        value={this.props.email}
+                        label='Username'
+                        placeholder='your name bro'
+                        onChangeText={this.usernameChanged.bind(this)}/>
+                </CardSection>
+                <CardSection>
+                    <Input
+                        autoCapitalize={'none'}
+                        secureTextEntry={true}
+                        value={this.props.password}
+                        label='Password'
+                        placeholder='******** ***'
+                        onChangeText={this.passwordChanged.bind(this)} />
+                </CardSection>
+                <CardSection>
+                    <Button onPress={()=>{console.log("Login Pressed");}}>Login</Button>
+                </CardSection>
+            </Card>
         );
     }
 }
 
 export default LoginComponent
-
-const styles = {
-    contentView: {
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingHorizontal: 10   
-    },
-    textInput: {
-        height: 44,
-        width: 300,
-        borderRadius: 5,
-        borderColor: '#343434',
-        borderWidth: 1,
-    },
-    LoginButton: {
-        alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        height: 30,
-        width: 100,
-        backgroundColor: 'steelblue',
-    }
-};
